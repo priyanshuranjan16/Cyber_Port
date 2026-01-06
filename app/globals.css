@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter);
+  --font-gaming: var(--font-orbitron);
+
+  --color-background: #050505;
+  --color-foreground: #ededed;
+  
+  --color-neon-green: #39ff14;
+  --color-electric-blue: #00f3ff;
+  --color-hot-pink: #ff00ff;
+  --color-gaming-card: #0f0f0f;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #39ff14;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00f3ff;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    cursor: default; /* We will add custom cursor later */
+  }
+}
+
