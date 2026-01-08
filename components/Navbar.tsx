@@ -20,7 +20,7 @@ export default function Navbar() {
             className="fixed top-0 left-0 right-0 z-50 h-16 bg-black/80 backdrop-blur-md border-b border-neon-green/20 flex items-center justify-between px-6 md:px-12"
         >
             <div className="text-neon-green font-gaming text-2xl tracking-widest drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
-                THE<span className="text-white">ARCHITECT</span>
+                THE | ARCHITECT
             </div>
             <ul className="hidden md:flex gap-8">
                 {links.map((link) => (
