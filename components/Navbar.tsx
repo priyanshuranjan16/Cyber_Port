@@ -20,7 +20,7 @@ export default function Navbar() {
             className="fixed top-0 left-0 right-0 z-50 h-16 bg-black/80 backdrop-blur-md border-b border-neon-green/20 flex items-center justify-between px-6 md:px-12"
         >
             <div className="text-neon-green font-gaming text-2xl tracking-widest drop-shadow-[0_0_5px_rgba(57,255,20,0.8)]">
-                PLAYER<span className="text-white">1</span>
+                THE<span className="text-white">ARCHITECT</span>
             </div>
             <ul className="hidden md:flex gap-8">
                 {links.map((link) => (
@@ -31,7 +31,7 @@ export default function Navbar() {
                         >
                             [{link.name}]
                         </Link>
-                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-neon-green transition-all group-hover:w-full duration-300" />
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-neon-green transition-all group-hover:w-full duration-300" />
                     </li>
                 ))}
             </ul>
