@@ -1,8 +1,14 @@
 "use client";
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function BackgroundGrid() {
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
     return (
         <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
             {/* Moving Grid */}
@@ -28,14 +34,14 @@ export default function BackgroundGrid() {
             {/* Vignette */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,#000000_100%)] opacity-80" />
 
-            {/* Floating Particles */}
-            {[...Array(20)].map((_, i) => (
+            {/* Floating Particles - Only render on client to avoid Math.random hydration mismatch */}
+            {mounted && [...Array(20)].map((_, i) => (
                 <motion.div
                     key={i}
                     className="absolute w-1 h-1 bg-neon-green rounded-full"
                     initial={{
-                        x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000),
-                        y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000),
+                        x: Math.random() * window.innerWidth,
+                        y: Math.random() * window.innerHeight,
                         opacity: 0
                     }}
                     animate={{
