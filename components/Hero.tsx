@@ -4,6 +4,18 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
     const [logs, setLogs] = useState<string[]>([]);
+    const [time, setTime] = useState("");
+
+    useEffect(() => {
+        const updateClock = () => {
+            const now = new Date();
+            setTime(`${now.getHours()}:${now.getMinutes().toString().padStart(2, '0')}`);
+        };
+
+        updateClock();
+        const clockInterval = setInterval(updateClock, 1000);
+        return () => clearInterval(clockInterval);
+    }, []);
 
     useEffect(() => {
         const systemLogs = [
@@ -18,7 +30,8 @@ export default function Hero() {
         let i = 0;
         const interval = setInterval(() => {
             if (i < systemLogs.length) {
-                setLogs(prev => [...prev.slice(-4), systemLogs[i]]);
+                const logToAdd = systemLogs[i];
+                setLogs(prev => [...prev.slice(-4), logToAdd]);
                 i++;
             }
         }, 800);
@@ -33,25 +46,25 @@ export default function Hero() {
             {/* HUD Corners */}
             <div className="absolute top-20 left-6 w-32 h-32 border-l-2 border-t-2 border-neon-green/30 rounded-tl-3xl p-4 pointer-events-none">
                 <div className="text-[10px] font-mono text-neon-green/70 space-y-1">
-                    <div>SYS://ONLINE</div>
+                    <div>SYS: ONLINE</div>
                     <div>LOC: 127.0.0.1</div>
-                    <div>T: {new Date().getHours()}:{new Date().getMinutes()}</div>
+                    <div>TIME: {time || "--:--"}</div>
                 </div>
             </div>
             <div className="absolute top-20 right-6 w-32 h-32 border-r-2 border-t-2 border-neon-green/30 rounded-tr-3xl pointer-events-none" />
-            <div className="absolute bottom-6 left-6 w-32 h-32 border-l-2 border-b-2 border-electric-blue/30 rounded-bl-3xl p-4 flex items-end pointer-events-none">
+            <div className="absolute bottom-6 left-6 w-32 h-32 border-l-2 border-b-2 border-neon-green/30 rounded-bl-3xl p-4 flex items-end pointer-events-none">
                 <div className="flex gap-1 h-8 items-end">
                     {[...Array(5)].map((_, i) => (
                         <motion.div
                             key={i}
                             animate={{ height: [10, 30, 10] }}
                             transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
-                            className="w-1 bg-electric-blue/50"
+                            className="w-1 bg-neon-green/50"
                         />
                     ))}
                 </div>
             </div>
-            <div className="absolute bottom-6 right-6 w-32 h-32 border-r-2 border-b-2 border-electric-blue/30 rounded-br-3xl pointer-events-none" />
+            <div className="absolute bottom-6 right-6 w-32 h-32 border-r-2 border-b-2 border-neon-green/30 rounded-br-3xl pointer-events-none" />
 
             {/* Scrolling Logs (Left Side) */}
             <div className="absolute left-6 top-1/2 -translate-y-1/2 hidden md:block w-48 font-mono text-[10px] text-neon-green/40 pointer-events-none">
