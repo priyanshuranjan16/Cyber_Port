@@ -82,7 +82,7 @@ export default function Hero() {
 
             {/* Central Radar Animation Background */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                <div className="w-[500px] h-[500px] border border-gray-800 rounded-full flex items-center justify-center relative">
+                <div className="w-125 h-125 border border-gray-800 rounded-full flex items-center justify-center relative">
                     <div className="w-[300px] h-[300px] border border-gray-700/50 rounded-full" />
                     <div className="w-[100px] h-[100px] border border-gray-700/30 rounded-full" />
                     <motion.div
