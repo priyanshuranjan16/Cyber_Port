@@ -37,8 +37,8 @@ export default function Experience() {
     return (
         <section id="experience" className="min-h-screen py-24 px-6 relative overflow-hidden">
             {/* Background elements */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-electric-blue/5 rounded-full blur-[120px] -z-10" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-hot-pink/5 rounded-full blur-[120px] -z-10" />
+            <div className="absolute top-0 right-0 w-125 h-125 bg-electric-blue/5 rounded-full blur-[120px] -z-10" />
+            <div className="absolute bottom-0 left-0 w-125 h-125 bg-hot-pink/5 rounded-full blur-[120px] -z-10" />
 
             <div className="max-w-6xl mx-auto w-full">
                 <motion.div
@@ -58,7 +58,7 @@ export default function Experience() {
 
                 <div className="relative">
                     {/* Timeline bar */}
-                    <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-neon-green via-electric-blue to-transparent md:-translate-x-1/2 hidden md:block" />
+                    <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-liner-to-b from-neon-green via-electric-blue to-transparent md:-translate-x-1/2 hidden md:block" />
 
                     <div className="space-y-12 relative">
                         {experiences.map((exp, index) => (
@@ -78,7 +78,7 @@ export default function Experience() {
 
                                 {/* Content Card */}
                                 <div className="w-full md:w-[45%] group">
-                                    <div className="relative p-[1px] rounded-xl bg-gradient-to-br from-gray-800 to-transparent group-hover:from-neon-green/50 group-hover:to-electric-blue/50 transition-all duration-500">
+                                    <div className="relative p-px rounded-xl bg-linear-to-br from-gray-800 to-transparent group-hover:from-neon-green/50 group-hover:to-electric-blue/50 transition-all duration-500">
                                         <div className="bg-black/90 backdrop-blur-xl p-6 rounded-xl border border-gray-900 overflow-hidden relative">
                                             {/* Decorative grid */}
                                             <div className="absolute top-0 right-0 p-4 opacity-10 font-gaming text-xs pointer-events-none">
