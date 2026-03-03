@@ -83,12 +83,12 @@ export default function Hero() {
             {/* Central Radar Animation Background */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
                 <div className="w-125 h-125 border border-gray-800 rounded-full flex items-center justify-center relative">
-                    <div className="w-[300px] h-[300px] border border-gray-700/50 rounded-full" />
-                    <div className="w-[100px] h-[100px] border border-gray-700/30 rounded-full" />
+                    <div className="w-75 h-75 border border-gray-700/50 rounded-full" />
+                    <div className="w-25 h-25 border border-gray-700/30 rounded-full" />
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                        className="absolute w-full h-1/2 top-0 left-0 origin-bottom bg-gradient-to-l from-transparent to-neon-green/10"
+                        className="absolute w-full h-1/2 top-0 left-0 origin-bottom bg-linear-to-l from-transparent to-neon-green/10"
                         style={{ borderRight: "1px solid rgba(57, 255, 20, 0.2)" }}
                     />
                 </div>
