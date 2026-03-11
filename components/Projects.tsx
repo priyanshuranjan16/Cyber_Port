@@ -46,7 +46,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="relative h-[400px] w-full rounded-xl bg-gradient-to-br from-gray-900 to-black border border-gray-800 p-8 group perspective-1000"
+            className="relative h-100 w-full rounded-xl bg-linear-to-br from-gray-900 to-black border border-gray-800 p-8 group perspective-1000"
         >
             <div
                 style={{ transform: "translateZ(75px)", transformStyle: "preserve-3d" }}
@@ -82,7 +82,7 @@ function ProjectCard({ project, index }: { project: any; index: number }) {
             </div>
 
             {/* Glowing Border Gradient */}
-            <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-neon-green/20 via-transparent to-electric-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ transform: "translateZ(0px)" }} />
+            <div className="absolute inset-0 rounded-xl bg-linear-to-br from-neon-green/20 via-transparent to-electric-blue/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" style={{ transform: "translateZ(0px)" }} />
         </motion.div>
     );
 }
